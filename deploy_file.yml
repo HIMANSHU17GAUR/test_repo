@@ -2,6 +2,7 @@
   hosts: 9.84.183.87
   user: root
   gather_facts: no
+  ignore_errors: yes
   tasks:
   - name: create file if not available
     copy:
