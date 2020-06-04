@@ -2,6 +2,7 @@
   hosts: all
   #9.84.183.87
   user: root
+  gather_facts: no
   tasks:
   - name: create file if not available
     copy:
