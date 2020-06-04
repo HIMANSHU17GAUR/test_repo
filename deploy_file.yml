@@ -1,0 +1,21 @@
+- name: deploy_file
+  hosts: 9.84.183.87
+  user: himanshu
+#  become: true
+  tasks:
+  - name: check file stat
+    stat:
+     path: /tmp/higa4jun.txt
+    register: xyz
+  
+  - name: create  index.html
+    copy:
+     content: "{{ ansible_hostname }}" 
+     dest: /tmp/higa4jun.txt
+    when: xyz.stat.exists  == false 
+
+  - name: append  index.html
+    lineinfile:
+     line: "{{ ansible_hostname }}" 
+     dest: /tmp/higa4jun.txt
+    when: xyz.stat.exists  == true
