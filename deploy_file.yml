@@ -2,21 +2,8 @@
   hosts: all
   #9.84.183.87
   user: root
-#  become: true
   tasks:
-  - name: check file state
-    stat:
-     path: /tmp/higa4jun.txt
-    register: xyz
-  
   - name: create file if not available
     copy:
      content: "This is test file from tower" 
      dest: /tmp/higa4jun.txt
-    when: xyz.stat.exists  == false 
-
-  - name: append file
-    lineinfile:
-     line: "This is test file from tower" 
-     dest: /tmp/higa4jun.txt
-    when: xyz.stat.exists  == true
