@@ -1,5 +1,6 @@
 - name: deploy_file
-  hosts: 9.84.183.87
+  hosts: all
+  #9.84.183.87
   user: himanshu
 #  become: true
   tasks:
