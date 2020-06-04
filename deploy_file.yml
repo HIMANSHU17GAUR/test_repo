@@ -11,12 +11,12 @@
   
   - name: create file if not available
     copy:
-     content: "{{ ansible_hostname }}" 
+     content: "This is test file from tower" 
      dest: /tmp/higa4jun.txt
     when: xyz.stat.exists  == false 
 
   - name: append file
     lineinfile:
-     line: "{{ ansible_hostname }}" 
+     line: "This is test file from tower" 
      dest: /tmp/higa4jun.txt
     when: xyz.stat.exists  == true
