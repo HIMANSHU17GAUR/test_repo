@@ -1,0 +1,9 @@
+- name: creating file on windows node
+  hosts: all
+  user: blr-dev-16
+#  become: true
+  tasks:
+  - name: Touch a file (creates if not present, updates modification time if present)
+    win_file:
+      path: C:\Users\blr-dev-16\Desktop\foo.conf
+      state: touch
