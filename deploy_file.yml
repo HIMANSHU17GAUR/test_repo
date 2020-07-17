@@ -1,10 +1,10 @@
 - name: deploy_file
-  hosts: 9.84.183.87
-  user: himanshu
+  hosts: all
+  user: root
   gather_facts: no
   ignore_errors: yes
   tasks:
   - name: create file if not available
     copy:
      content: "This is test file from tower" 
-     dest: /home/himanshu/higa4jun.txt
+     dest: /tmp/at_linux_8_test_tower_17jul2020.txt
